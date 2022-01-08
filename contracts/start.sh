@@ -1,1 +1,0 @@
-remixd -s /Users/james/git/Teeter-Smart-Contract --remix-ide http://localhost:8080/

@@ -1,0 +1,58 @@
+{
+	"compiler": {
+		"version": "0.5.16+commit.9c3226ce"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/contracts/TeeterIncentive.sol": "TeeterIncentiveLibrary"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/contracts/TeeterIncentive.sol": {
+			"keccak256": "0xb5b595a00daa13886c4d14659b6f9109d9aaf4d5ad5df71f4b37178ea4d77328",
+			"urls": [
+				"bzz-raw://dcb2ef4d0d7952051f898fb425c8ca5dea39f78776a3034f71c1eccbfd72ea63",
+				"dweb:/ipfs/QmZwd2fnVM6Rjw9MuRzcpPLrxWRSNj7R5Xkcp4fmniHLQe"
+			]
+		},
+		"localhost/contracts/interfaces/IERC20.sol": {
+			"keccak256": "0x12de1b69f24b30d370331246b2a852d0336d4f5f2e11eb3fa51eb1ce1edc6ea0",
+			"urls": [
+				"bzz-raw://17c8abbea0666c141f22670e0f26539e5019fbdf87f1b4128808fb8e74358883",
+				"dweb:/ipfs/QmTDunWwzdQ89bpEngnAgswpuAfF5RpScYQwmADdMy6afA"
+			]
+		},
+		"localhost/contracts/libraries/SafeMath.sol": {
+			"keccak256": "0x853c86c1adb56eb7da049fd08a405720740193e12df31ac4298103ce0b0ca180",
+			"urls": [
+				"bzz-raw://a75553f7f4160eadf9a14bc04bc097377f98220b1d936e3ec0f6fb26e1fd40ed",
+				"dweb:/ipfs/QmYBNA1vTFfxug4TzZt4fr6KxasfogiFRpxeezVGCKa9S2"
+			]
+		},
+		"localhost/contracts/libraries/TransferHelper.sol": {
+			"keccak256": "0x6a2681333f7002d314ed9f58b2733a34825b1fa5a0008603095ecb8f2c964b59",
+			"urls": [
+				"bzz-raw://56e86113bfed3d602033f57b9ea49fa83a28ce041abdba2be5e685921a382e27",
+				"dweb:/ipfs/QmfYpUJjdzPB85wrfojQNiH6RuZUfnekLSRAqSe4FjsfpC"
+			]
+		}
+	},
+	"version": 1
+}
