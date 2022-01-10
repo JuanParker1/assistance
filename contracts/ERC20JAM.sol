@@ -98,6 +98,14 @@ contract FolloERC20 {
         return true;
     }
     
+    uint256 public Aamt;
+    function transferQTY(address to, uint256 value) external returns (bool) {
+        uint256 amt = value*(10**uint256(decimals));
+        Aamt = amt;
+        _transfer(msg.sender, to, amt);
+        return true;
+    }    
+    
     function transfer1(address from, address to, uint256 value) external returns (bool) {
         testFlag+=1;
         //msgSender=msg.sender;
