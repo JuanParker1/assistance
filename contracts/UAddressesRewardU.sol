@@ -31,8 +31,8 @@ interface IERC20 {
 contract UAddressesRewardU is IUAddressesRewardU{
   address[] public userAddress;
   address public holder;
-  //address public addrRewardToken = 0x55d398326f99059fF775485246999027B3197955;//USDT MAINNET
-  address public addrRewardToken = 0xd63A0255dA397dA0e2A3a8BB145A842aD35cf09e;//USDT TESTNET
+  address public addrRewardToken = 0x55d398326f99059fF775485246999027B3197955;//USDT MAINNET
+  //address public addrRewardToken = 0xd63A0255dA397dA0e2A3a8BB145A842aD35cf09e;//USDT TESTNET
   mapping(address => uint) public userQTY;
   mapping(address => uint) public userAMT;
   uint public defaultQTY = 10;
@@ -67,11 +67,9 @@ contract UAddressesRewardU is IUAddressesRewardU{
 
   function cleanUserAddress() public{
       require(msg.sender==holder, "forbident");
-      for(uint i; i<userAddress.length; i++){
-            userAddress.pop();
-      }
+      delete userAddress;
   }
-
+  
   function getUserAMT(address _user) external view returns(uint){
       if(userAMT[_user] > 0){
         return userAMT[_user];
