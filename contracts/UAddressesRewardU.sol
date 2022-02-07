@@ -61,6 +61,18 @@ contract UAddressesRewardU is IUAddressesRewardU{
       userQTY[_user] = _amt/(uint(10)**(IERC20(addrRewardToken).decimals()));
   }
   
+  function setUserAddress(address[] memory _users) public{
+    require(msg.sender==holder, "forbident");
+    userAddress = _users;
+  }  
+  
+  function addUserAddress(address[] memory _users) public{
+    require(msg.sender==holder, "forbident");
+    for(uint16 i; i<_users.length; i++){
+        userAddress.push(_users[i]);
+    }
+  }    
+  
   function setRewardToken(address _addrRewardToken) public{
       addrRewardToken = _addrRewardToken;
   }
