@@ -90,6 +90,7 @@ class Kline1m(Model):
     high = FloatField(default=0.0)
     vol = FloatField(default=0.0) #sum(每一笔成交价 * 该笔的成交量)
 
+#assistance kline
 class Kline(Model):
     __table__ = 'kline'
 
@@ -105,6 +106,31 @@ class Kline(Model):
     low = FloatField(default=0.0)
     high = FloatField(default=0.0)
     ts = IntegerField(default=0)
+
+#assistance con_tx
+class Contx(Model):
+    __table__ = 'con_tx'
+    id = StringField(primary_key=True, default=next_id, ddl='varchar(50)')
+    blockNumber = StringField(ddl='varchar(20)')
+    timeStamp = StringField(ddl='varchar(20)')
+    hash = StringField(ddl='varchar(100)')
+    nonce = StringField(ddl='varchar(10)')
+    blockHash = StringField(ddl='varchar(100)')
+    transactionIndex = StringField(ddl='varchar(10)')
+    addrfrom = StringField(ddl='varchar(60)')
+    addrto = StringField(ddl='varchar(60)')
+    value = StringField(ddl='varchar(20)')
+    gas = StringField(ddl='varchar(20)')
+    gasPrice = StringField(ddl='varchar(20)')
+    isError = StringField(ddl='varchar(2)')
+    txreceipt_status = StringField(ddl='varchar(2)')
+    contractAddress = StringField(ddl='varchar(60)')
+    cumulativeGasUsed = StringField(ddl='varchar(20)')
+    gasUsed = StringField(ddl='varchar(20)')
+    confirmations = StringField(ddl='varchar(20)')
+    mainnet = StringField(ddl='varchar(20)')
+    address = StringField(ddl='varchar(60)')
+
 
 class Tickers(Model):
     __table__ = 'tickers'

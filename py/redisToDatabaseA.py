@@ -7,7 +7,7 @@
 import time
 import asyncio
 import DatabaseMng.orm
-from DatabaseMng.models import Kline
+from DatabaseMng.models import Kline, Contx
 import DataCollect.DataMem
 from pprint import pprint
 import Redis
@@ -20,7 +20,6 @@ def start_loop(loop):
     asyncio.set_event_loop(loop)
     loop.run_forever()
 
-# save json to database table mkt_trade
 async def kline(_pool, exchangeIn="", tsIn=0):
     dataMem = DataCollect.DataMem
     if exchangeIn == 'gate':
@@ -49,7 +48,39 @@ async def kline(_pool, exchangeIn="", tsIn=0):
                     ts=tsIn
                 )
                 await _kline.save(pool=_pool)
-    #return keyIn
+
+async def contx(_pool, address=""):
+    dataMem = DataCollect.DataMem
+    for i in range(10000):
+        keyAddress = address + "_" + str(i)
+        objNeedSave = dataMem.getTmp(keyAddress)
+        if not objNeedSave:
+            continue
+        decodejsonLst = objNeedSave.get("result")
+        for record in decodejsonLst:
+            print(record)
+            _contx = Contx(
+                blockNumber = record.get("blockNumber"),
+                timeStamp = record.get("timeStamp"),
+                hash = record.get("hash"),
+                nonce = record.get("nonce"),
+                blockHash = record.get("blockHash"),
+                transactionIndex = record.get("transactionIndex"),
+                addrfrom = record.get("from"),
+                addrto = record.get("to"),
+                value = record.get("value"),
+                gas = record.get("gas"),
+                gasPrice = record.get("gasPrice"),
+                isError = record.get("isError"),
+                txreceipt_status = record.get("txreceipt_status"),
+                contractAddress = record.get("contractAddress"),
+                cumulativeGasUsed = record.get("cumulativeGasUsed"),
+                gasUsed = record.get("gasUsed"),
+                confirmations = record.get("confirmations"),
+                mainnet = record.get("mainnet"),
+                address = record.get("address"),
+            )
+            await _contx.save(pool=_pool)
 
 async def main(loop):
     # get database connect pool
@@ -66,32 +97,17 @@ async def main(loop):
     keyGateKline = "gate_kline"
     exchange = 'gate'
     interval = '15m'
-    """
-    currency_pairs = Configuration.Configure.pairs
-    for currency_pair in currency_pairs:
-        keyGate = keyGateKline+currency_pair
-        objNeedSave = dataMem.getTmp(keyGate)
-        if not objNeedSave:
-            return
-        coroutine_mktKlineSave = kline(
-            decodejson=objNeedSave,
-            _pool=pool,
-            exchangeIn=exchange,
-            tsIn=now,
-            symbolIn=currency_pair,
-            intervalIn=interval,
-            keyIn=keyGate
-        )
-        tasks.append(coroutine_mktKlineSave)    
-    """
-
-
     coroutine_mktKlineSave = kline(
         _pool=pool,
         exchangeIn=exchange,
         tsIn=now
     )
+    coroutine_contxSave = contx(
+        _pool=pool,
+        address="0x1216Be0c4328E75aE9ADF726141C2254c2Dcc1b6"
+    )
     tasks.append(coroutine_mktKlineSave)
+    tasks.append(coroutine_contxSave)
 
     """
   

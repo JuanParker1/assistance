@@ -9,11 +9,12 @@ import hmac
 import hashlib
 import json
 
-import urllib
+import urllib3
 import datetime
 import requests
 #import urlparse   # urllib.parse in python 3
 import aiohttp
+import time
 
 # timeout in 5 seconds:
 TIMEOUT = 5
@@ -32,7 +33,7 @@ async def aiohttp_get_request(url, params, add_to_headers=None):
     }
     if add_to_headers:
         headers.update(add_to_headers)
-    postdata = urllib.parse.urlencode(params)
+    postdata = urllib3.parse.urlencode(params)
     try:
         #response = requests.get(url, postdata, headers=headers, timeout=TIMEOUT)
         response = await session.get(url,postdata, headers=headers, timeout=TIMEOUT)
@@ -58,19 +59,23 @@ def http_get_request(url, params, add_to_headers=None):
     if add_to_headers:
         headers.update(add_to_headers)
     if params:
-        postdata = urllib.parse.urlencode(params)
-    try:
-        if params:
-            response = requests.get(url, postdata, headers=headers, timeout=TIMEOUT)
-        else:
-            response = requests.get(url, headers=headers, timeout=TIMEOUT)
-        if response.status_code == 200:
-            return response.json()
-        else:
-            return {"status":"fail","status_code":response.status_code}
-    except Exception as e:
-        print("httpGet failed, detail is:%s" %e)
-        return {"status":"fail","msg": "%s"%e}
+        postdata = urllib3.parse.urlencode(params)
+    count = 0
+    while count < 3:
+        try:
+            if params:
+                response = requests.get(url, postdata, headers=headers, timeout=TIMEOUT)
+            else:
+                response = requests.get(url, headers=headers, timeout=TIMEOUT)
+            if response.status_code == 200:
+                return response.json()
+            else:
+                return {"status":"fail","status_code":response.status_code}
+        except Exception as e:
+            count += 1
+            print("httpGet failed, detail is:%s" %e)
+            time.sleep(5)
+            #return {"status":"fail","msg": "%s"%e}
 
 
 #add by xuj for https://api.yantoken.io
@@ -80,7 +85,7 @@ def http_get_request_yantoken(url, params, accessKey=None):
         "Content-type": "application/x-www-form-urlencoded",
         'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0 Chrome/39.0.2171.71'
     }
-    postdata = urllib.parse.urlencode(params)
+    postdata = urllib3.parse.urlencode(params)
     try:
         response = requests.get(url, postdata, headers=headers, timeout=TIMEOUT)
         if response.status_code == 200:
@@ -163,7 +168,7 @@ def api_key_get(url, request_path, params, ACCESS_KEY, SECRET_KEY):
     host_url = url
     host_name = host_url
     #host_name = urlparse.urlparse(host_url).hostname
-    host_name = urllib.parse.urlparse(host_url).hostname
+    host_name = urllib3.parse.urlparse(host_url).hostname
     host_name = host_name.lower()
 
     params['Signature'] = createSign(params, method, host_name, request_path, SECRET_KEY)
@@ -181,7 +186,7 @@ async def aioapi_key_get(url, request_path, params, ACCESS_KEY, SECRET_KEY):
     host_url = url
     host_name = host_url
     #host_name = urlparse.urlparse(host_url).hostname
-    host_name = urllib.parse.urlparse(host_url).hostname
+    host_name = urllib3.parse.urlparse(host_url).hostname
     host_name = host_name.lower()
 
     params['Signature'] = createSign(params, method, host_name, request_path, SECRET_KEY)
@@ -198,7 +203,7 @@ async def aioapi_key_get(url, request_path, params, ACCESS_KEY, SECRET_KEY):
         "Content-type": "application/x-www-form-urlencoded",
         'User-Agent': 'your bot 0.1'
     }
-    postdata = urllib.parse.urlencode(params)
+    postdata = urllib3.parse.urlencode(params)
     try:
         #response = requests.get(url, postdata, headers=headers, timeout=TIMEOUT)
         response = await session.get(url,postdata, headers=headers, timeout=TIMEOUT)
@@ -224,10 +229,10 @@ def api_key_post(url, request_path, params, ACCESS_KEY, SECRET_KEY):
 
     host_url = url
     #host_name = urlparse.urlparse(host_url).hostname
-    host_name = urllib.parse.urlparse(host_url).hostname
+    host_name = urllib3.parse.urlparse(host_url).hostname
     host_name = host_name.lower()
     params_to_sign['Signature'] = createSign(params_to_sign, method, host_name, request_path, SECRET_KEY)
-    url = host_url + request_path + '?' + urllib.parse.urlencode(params_to_sign)
+    url = host_url + request_path + '?' + urllib3.parse.urlencode(params_to_sign)
     return http_post_request(url, params)
 
 def aioapi_key_post(url, request_path, params, ACCESS_KEY, SECRET_KEY):
@@ -240,10 +245,10 @@ def aioapi_key_post(url, request_path, params, ACCESS_KEY, SECRET_KEY):
 
     host_url = url
     #host_name = urlparse.urlparse(host_url).hostname
-    host_name = urllib.parse.urlparse(host_url).hostname
+    host_name = urllib3.parse.urlparse(host_url).hostname
     host_name = host_name.lower()
     params_to_sign['Signature'] = createSign(params_to_sign, method, host_name, request_path, SECRET_KEY)
-    url = host_url + request_path + '?' + urllib.parse.urlencode(params_to_sign)
+    url = host_url + request_path + '?' + urllib3.parse.urlencode(params_to_sign)
     return aiohttp_post_request(url, params)
 
 # add by xuj for https://api.yantoken.io/
@@ -256,7 +261,7 @@ def api_key_get_yantoken(url, request_path, params, ACCESS_KEY, SECRET_KEY):
 
     host_url = url
     host_name = host_url
-    host_name = urllib.parse.urlparse(host_url).hostname
+    host_name = urllib3.parse.urlparse(host_url).hostname
     host_name = host_name.lower()
 
     params['signature'] = createSign_yantoken(params, method, host_name, request_path, SECRET_KEY)
@@ -276,17 +281,17 @@ def api_key_post_temp(url, request_path, params, ACCESS_KEY, SECRET_KEY):
 
     host_url = url
     #host_name = urlparse.urlparse(host_url).hostname
-    host_name = urllib.parse.urlparse(host_url).hostname
+    host_name = urllib3.parse.urlparse(host_url).hostname
     host_name = host_name.lower()
     params_to_sign['signature'] = createSign_yantoken(params_to_sign, method, host_name, request_path, SECRET_KEY)
     #add by xuj
     #params_to_sign['signature'] = "b72c290a2ea7db1499c152cd6a3a792052c01b4cd88d1897ea9f540443cfc5d4"
-    url = host_url + request_path + '?' + urllib.parse.urlencode(params_to_sign)
+    url = host_url + request_path + '?' + urllib3.parse.urlencode(params_to_sign)
     return http_post_request_temp(url, params,accessKey=ACCESS_KEY)
 
 def createSign(pParams, method, host_url, request_path, secret_key):
     sorted_params = sorted(pParams.items(), key=lambda d: d[0], reverse=False)
-    encode_params = urllib.parse.urlencode(sorted_params)
+    encode_params = urllib3.parse.urlencode(sorted_params)
     payload = [method, host_url, request_path, encode_params]
     payload = '\n'.join(payload)
     payload = payload.encode(encoding='UTF8')
@@ -299,7 +304,7 @@ def createSign(pParams, method, host_url, request_path, secret_key):
 # add by xuj for https://api.yantoken.io/
 def createSign_yantoken(pParams, method, host_url, request_path, secret_key):
     sorted_params = sorted(pParams.items(), key=lambda d: d[0], reverse=False)
-    encode_params = urllib.parse.urlencode(sorted_params)
+    encode_params = urllib3.parse.urlencode(sorted_params)
     payload = [encode_params]
     payload = '\n'.join(payload)
     payload = payload.encode(encoding='UTF8')
