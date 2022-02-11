@@ -49,7 +49,7 @@ async def kline(_pool, exchangeIn="", tsIn=0):
                 )
                 await _kline.save(pool=_pool)
 
-async def contx(_pool, address="", project=""):
+async def contx(_pool, address="", project="", mainnet=""):
     dataMem = DataCollect.DataMem
     for i in range(10000):
         keyAddress = address + "_" + str(i)
@@ -77,7 +77,7 @@ async def contx(_pool, address="", project=""):
                 cumulativeGasUsed = record.get("cumulativeGasUsed"),
                 gasUsed = record.get("gasUsed"),
                 confirmations = record.get("confirmations"),
-                mainnet = "BSC Mainnet",
+                mainnet=mainnet,
                 address = address,
                 project=project
             )
@@ -105,8 +105,9 @@ async def main(loop):
     )
     coroutine_contxSave = contx(
         _pool=pool,
-        address="0x42867df3c1ce62613aae3f4238cbcf3d7630880b",
-        project="Tranchess"
+        address="0x1b6d3e5da9004668e14ca39d1553e9a46fe842b3",
+        project="Pendle",
+        mainnet="ETH"
     )
     #tasks.append(coroutine_mktKlineSave)
     tasks.append(coroutine_contxSave)
