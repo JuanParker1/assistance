@@ -27,11 +27,11 @@ class Configure:
         'db':'world'
     }
     database = {
-        'user':'wold1919',
+        'user':'world1919',
         'prot': 3306,
         'host':'localhost',
         'password':'123456',
-        'db':'wold1919'
+        'db':'world1919'
     }
     #former snc_database
 

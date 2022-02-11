@@ -12,7 +12,7 @@ apikey = "PP4YZQY672JIYIV6BG6H5GWQA5XJ5A3IS1" #AVAX ETH
 #mainnet = "https://api.bscscan.com/api"#BSC MAINNET
 #mainnet = "https://api.snowtrace.io/api"#AVAX MAINNET
 mainnet = "https://api.etherscan.io/api"#ETH MAINNET
-startblock = 13085783
+startblock = 12085785
 times = 999999999
 trys = 3
 counts = 0
@@ -30,7 +30,11 @@ for i in range(times):
     url = url1 + url2 + url3 + url4
     print(url)
     resultJson = dm.get_tmp(url)
-    if(len(resultJson.get("result"))==10000):
+    if (len(resultJson.get("result")) == 0):
+        print("result is 0 go next")
+        startblock = endblock
+        continue
+    elif(len(resultJson.get("result"))==10000):
         for j in range(trys):
             print('try trys-------------------')
             url1 = mainnet+'?module=account&action=txlist&address=' + address + '&startblock=' + str(startblock + 1)
