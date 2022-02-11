@@ -105,7 +105,7 @@ async def main(loop):
     )
     coroutine_contxSave = contx(
         _pool=pool,
-        address="0x1216Be0c4328E75aE9ADF726141C2254c2Dcc1b6",
+        address="0x42867df3c1ce62613aae3f4238cbcf3d7630880b",
         project="Tranchess"
     )
     #tasks.append(coroutine_mktKlineSave)
