@@ -61,7 +61,7 @@ def http_get_request(url, params, add_to_headers=None):
     if params:
         postdata = urllib3.parse.urlencode(params)
     count = 0
-    while count < 3:
+    while count < 5:
         try:
             if params:
                 response = requests.get(url, postdata, headers=headers, timeout=TIMEOUT)

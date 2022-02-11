@@ -49,7 +49,7 @@ async def kline(_pool, exchangeIn="", tsIn=0):
                 )
                 await _kline.save(pool=_pool)
 
-async def contx(_pool, address=""):
+async def contx(_pool, address="", project=""):
     dataMem = DataCollect.DataMem
     for i in range(10000):
         keyAddress = address + "_" + str(i)
@@ -77,8 +77,9 @@ async def contx(_pool, address=""):
                 cumulativeGasUsed = record.get("cumulativeGasUsed"),
                 gasUsed = record.get("gasUsed"),
                 confirmations = record.get("confirmations"),
-                mainnet = record.get("mainnet"),
-                address = record.get("address"),
+                mainnet = "BSC Mainnet",
+                address = address,
+                project=project
             )
             await _contx.save(pool=_pool)
 
@@ -90,7 +91,7 @@ async def main(loop):
                                               host=Configuration.Configure.database.get('host'),
                                               password=Configuration.Configure.database.get('password'),
                                               db=Configuration.Configure.database.get('db'),
-                                              )
+    )
     now = time.time()
     dataMem = DataCollect.DataMem
     tasks = []
@@ -104,23 +105,16 @@ async def main(loop):
     )
     coroutine_contxSave = contx(
         _pool=pool,
-        address="0x1216Be0c4328E75aE9ADF726141C2254c2Dcc1b6"
+        address="0x1216Be0c4328E75aE9ADF726141C2254c2Dcc1b6",
+        project="Tranchess"
     )
-    tasks.append(coroutine_mktKlineSave)
+    #tasks.append(coroutine_mktKlineSave)
     tasks.append(coroutine_contxSave)
-
-    """
-  
-    """
-
-
     if tasks:
         dones, pendings = await asyncio.wait(tasks)
-
         for task in dones:
             print(task)
             #Redis.flushPastKey(task.result())
-
 
 while True:
     print('start save redis to database')

@@ -130,7 +130,7 @@ class Contx(Model):
     confirmations = StringField(ddl='varchar(20)')
     mainnet = StringField(ddl='varchar(20)')
     address = StringField(ddl='varchar(60)')
-
+    project = StringField(ddl='varchar(20)')
 
 class Tickers(Model):
     __table__ = 'tickers'
