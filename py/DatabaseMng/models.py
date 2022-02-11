@@ -119,7 +119,7 @@ class Contx(Model):
     transactionIndex = StringField(ddl='varchar(10)')
     addrfrom = StringField(ddl='varchar(60)')
     addrto = StringField(ddl='varchar(60)')
-    value = StringField(ddl='varchar(20)')
+    value = StringField(ddl='varchar(60)')
     gas = StringField(ddl='varchar(20)')
     gasPrice = StringField(ddl='varchar(20)')
     isError = StringField(ddl='varchar(2)')

@@ -36,6 +36,12 @@ DELETE from kline kl where kl.id in(
 	) ta 
 )
 
+#qty of ID address
+SELECT count(*) from (
+	SELECT ct.addrfrom from con_tx ct where ct.address='0x1b6d3e5da9004668e14ca39d1553e9a46fe842b3'
+	GROUP BY ct.addrfrom
+) aa
+
 #count records of a contract
 SELECT count(*) from con_tx ct where ct.address='0x57c8041c6aa3440843b5e48b16016a95f822195f'
 
