@@ -38,18 +38,21 @@ DELETE from kline kl where kl.id in(
 
 #qty of ID address
 SELECT count(*) from (
-	SELECT ct.addrfrom from con_tx ct where ct.address='0x1b6d3e5da9004668e14ca39d1553e9a46fe842b3'
+	SELECT ct.addrfrom from con_tx ct where ct.address='0xc8c436271f9a6f10a5b80c8b8ed7d0e8f37a612d'
 	GROUP BY ct.addrfrom
 ) aa
 
 #count records of a contract
-SELECT count(*) from con_tx ct where ct.address='0x57c8041c6aa3440843b5e48b16016a95f822195f'
+SELECT count(*) from con_tx ct where ct.address='0xc8c436271f9a6f10a5b80c8b8ed7d0e8f37a612d'
 
 #max and min timestamp of a contract
-SELECT min(ct.timeStamp),max(ct.timeStamp), max(ct.timeStamp)-min(ct.timeStamp) as diff, (max(ct.timeStamp)-min(ct.timeStamp))/3600/24 as days  
-from con_tx ct where address = '0x771ad65bf2837c89a1cc0a0fc601d9de7f217b52'
+SELECT min(ct.timeStamp),max(ct.timeStamp), max(ct.timeStamp)-min(ct.timeStamp) as diff, (max(ct.timeStamp)-min(ct.timeStamp))/3600/24 as days, count(*)/((max(ct.timeStamp)-min(ct.timeStamp))/3600/24) as activitys
+from con_tx ct where address = '0xc8c436271f9a6f10a5b80c8b8ed7d0e8f37a612d'
 
 #per day activitys of a contract in the lastest week 
-SELECT count(*) total, count(*)/7 from con_tx ct where address = '0x771ad65bf2837c89a1cc0a0fc601d9de7f217b52' 
-and (ct.TIMESTAMP < 1644573061-86400*7*1 and ct.TIMESTAMP>(1644573061-86400*7*2)) 
+SELECT count(*) total, count(*)/7 from con_tx ct where address = '0xc8c436271f9a6f10a5b80c8b8ed7d0e8f37a612d' 
+and (ct.TIMESTAMP < (SELECT max(ct.timeStamp) maxtimestamp 
+from con_tx ct where address = '0xc8c436271f9a6f10a5b80c8b8ed7d0e8f37a612d')-86400*7*1 and ct.TIMESTAMP>((SELECT max(ct.timeStamp) maxtimestamp 
+from con_tx ct where address = '0xc8c436271f9a6f10a5b80c8b8ed7d0e8f37a612d')-86400*7*2)) 
+
 

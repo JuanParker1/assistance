@@ -27,13 +27,65 @@ class Configure:
         'db':'world'
     }
     database = {
-        'user':'world1919',
+        'user':'wold1919',
         'prot': 3306,
         'host':'localhost',
         'password':'123456',
-        'db':'world1919'
+        'db':'wold1919'
     }
     #former snc_database
+
+    scans_config ={
+        "times": 9999999,
+        "trys": 20,
+        "interval": 300000
+    }
+
+    scans = [
+        {
+            "mainnetURL": "https://api.etherscan.io/api",
+             "apikey": "PP4YZQY672JIYIV6BG6H5GWQA5XJ5A3IS1",
+             "project": "OHM",
+             "mainnet": "ETH",
+             "items":[{
+                 "address": "0xc8c436271f9a6f10a5b80c8b8ed7d0e8f37a612d",
+                 "startblock": 14080589,
+                 "enddingblock": 14180589
+                },{
+                 "address": "0xc02392336420bb54ce2da8a8aa4b118f2dceeb04",
+                 "startblock": 13027920,
+                 "enddingblock": 14190829
+                }
+             ]
+        },{
+            "mainnetURL": "https://api.bscscan.com/api",#BSC MAINNET
+            "apikey": "JRYY4PT6QMHDE5IV3H8VYJX4UM56JAYXHP" ,#BSC MAINNET
+            "project": "",
+            "mainnet": "BSC",
+            "items": [{
+                "address": "0x1216be0c4328e75ae9adf726141c2254c2dcc1b6",
+                "startblock": 8488020,
+                "enddingblock": 15190289
+                },
+                {
+                "address": "0xb13a07c57ba5297506c71e9c958210fea8bbcef0",
+                "startblock": 12264650,
+                "enddingblock": 15189619
+                }
+            ]
+        },{
+            "mainnetURL": "https://api.snowtrace.io/api",#AVAX MAINNET
+            "apikey": "Y7J153VGPMHU5VK6X1SF2V6E92QF3PAWVN", #AVAX MAINNET
+            "project": "",
+            "mainnet": "AVAX",
+            "items": [
+                {"address": "0x771ad65bf2837c89a1cc0a0fc601d9de7f217b52",
+                 "startblock": 6725070,
+                 "enddingblock": 10821139
+                 }
+            ]
+        }
+    ]
 
     exchKeys_test={
         'huobi':[
