@@ -4,7 +4,7 @@
     <list default="true" id="05ed94fd-317b-432f-8d49-d663a4a462d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Configuration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contractTxn.py" beforeDir="false" afterPath="$PROJECT_DIR$/contractTxn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataCollect/HuobiDMUtil.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataCollect/HuobiDMUtil.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/redisToDatabaseA.py" beforeDir="false" afterPath="$PROJECT_DIR$/redisToDatabaseA.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,18 +14,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/py$contractTxn.coverage" NAME="contractTxn Coverage Results" MODIFIED="1644668646113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/py$redisToDatabaseA.coverage" NAME="redisToDatabaseA Coverage Results" MODIFIED="1644648135556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/py$Configuration.coverage" NAME="Configuration Coverage Results" MODIFIED="1645082796931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/py$contractTxn.coverage" NAME="contractTxn Coverage Results" MODIFIED="1645091025704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/py$redisToDatabaseA.coverage" NAME="redisToDatabaseA Coverage Results" MODIFIED="1645087647454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/py$HuobiDMUtil.coverage" NAME="HuobiDMUtil Coverage Results" MODIFIED="1644544310019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataCollect" />
     <SUITE FILE_PATH="coverage/py$HuobiDMService.coverage" NAME="HuobiDMService Coverage Results" MODIFIED="1644499150790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DataCollect" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contractTxn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="39" column="61" lean-forward="true" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
+            <state relative-caret-position="229">
+              <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -34,22 +35,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Configuration.py">
+        <entry file="file://$PROJECT_DIR$/redisToDatabaseA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="39" column="19" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+            <state relative-caret-position="532">
+              <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+              <folding>
+                <element signature="e#57#68#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/redisToDatabaseA.py">
+        <entry file="file://$PROJECT_DIR$/Configuration.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1062">
-              <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
-              <folding>
-                <element signature="e#57#68#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="420">
+              <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -78,12 +79,16 @@
       <find>0x771ad65bf2837c89a1cc0a0fc601d9de7f217b52</find>
       <find>0xc02392336420bb54ce2da8a8aa4b118f2dceeb04</find>
       <find>0x28130d2f98c3130a04d338df6081ef607664a0b9</find>
-      <find>Configuration</find>
       <find>times</find>
       <find>startblock</find>
       <find>enddingblock</find>
       <find>endblock</find>
       <find>interval</find>
+      <find>Configuration</find>
+      <find>project</find>
+      <find>0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7</find>
+      <find>0x2E088A0A19dda628B4304301d1EA70b114e4AcCd</find>
+      <find>0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B</find>
     </findStrings>
     <replaceStrings>
       <replace>record.get(&quot;timeStamp&quot;),</replace>
@@ -99,16 +104,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/DataCollect/HuobiDMService.py" />
-        <option value="$PROJECT_DIR$/DataCollect/HuobiDMUtil.py" />
         <option value="$PROJECT_DIR$/DatabaseMng/models.py" />
+        <option value="$PROJECT_DIR$/contractTxn.py" />
+        <option value="$PROJECT_DIR$/DataCollect/HuobiDMUtil.py" />
         <option value="$PROJECT_DIR$/redisToDatabaseA.py" />
         <option value="$PROJECT_DIR$/Configuration.py" />
-        <option value="$PROJECT_DIR$/contractTxn.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="-570" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-569" />
     <option name="y" value="-1440" />
     <option name="width" value="2560" />
     <option name="height" value="1440" />
@@ -162,6 +167,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.contractTxn">
+    <configuration name="Configuration" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Configuration.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="HuobiDMService" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="py" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -254,6 +281,7 @@
       <list>
         <item itemvalue="Python.contractTxn" />
         <item itemvalue="Python.redisToDatabaseA" />
+        <item itemvalue="Python.Configuration" />
         <item itemvalue="Python.HuobiDMUtil" />
         <item itemvalue="Python.HuobiDMService" />
       </list>
@@ -276,26 +304,37 @@
       <workItem from="1644565518359" duration="9742000" />
       <workItem from="1644593721628" duration="2207000" />
       <workItem from="1644643257205" duration="10274000" />
+      <workItem from="1644818174873" duration="76000" />
+      <workItem from="1645067992144" duration="8239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35029000" />
+    <option name="totallyTimeSpent" value="43344000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-570" y="-1440" width="2560" height="1440" extended-state="6" />
+    <frame x="-569" y="-1440" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12589356" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12748213" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960285" weight="0.3270073" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.3270073" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3992701" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329927" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
@@ -361,16 +400,6 @@
     <entry file="file://$PROJECT_DIR$/DatabaseMng/DbService.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataCollect/HuobiDMUtil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
-          <folding>
-            <element signature="e#104#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DatabaseMng/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="681">
@@ -402,17 +431,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Configuration.py">
+    <entry file="file://$PROJECT_DIR$/DataCollect/HuobiDMUtil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="39" column="19" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
+        <state relative-caret-position="472">
+          <caret line="73" column="30" lean-forward="true" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
+          <folding>
+            <element signature="e#104#117#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contractTxn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="39" column="61" lean-forward="true" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
+        <state relative-caret-position="229">
+          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -421,11 +453,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/redisToDatabaseA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
+        <state relative-caret-position="532">
+          <caret line="28" column="67" lean-forward="true" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
           <folding>
             <element signature="e#57#68#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Configuration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
         </state>
       </provider>
     </entry>

@@ -45,6 +45,288 @@ class Configure:
         {
             "mainnetURL": "https://api.etherscan.io/api",
              "apikey": "PP4YZQY672JIYIV6BG6H5GWQA5XJ5A3IS1",
+             "project": "CRV",
+             "mainnet": "ETH",
+             "items":[{
+                 "address": "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
+                 "startblock": 12450990,
+                 "enddingblock": 14222747
+                },{
+                 "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
+                 "startblock": 12450980,
+                 "enddingblock": 14222819
+                },{
+                 "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
+                 "startblock": 12451010,
+                 "enddingblock": 14222579
+                },{
+                 "address": "0x8014595F2AB54cD7c604B00E9fb932176fDc86Ae",
+                 "startblock": 12451010,
+                 "enddingblock": 14222559
+                },{
+                 "address": "0xCF50b810E57Ac33B91dCF525C6ddd9881B139332",
+                 "startblock": 12451030,
+                 "enddingblock": 14222779
+                },{
+                 "address": "0x3Fe65692bfCD0e6CF84cB1E7d24108E434A7587e",
+                 "startblock": 12451030,
+                 "enddingblock": 14222679
+                },{
+                 "address": "0x2E088A0A19dda628B4304301d1EA70b114e4AcCd",
+                 "startblock": 12451280,
+                 "enddingblock": 14214679
+                },{
+                 "address": "0x05767d9EF41dC40689678fFca0608878fb3dE906",
+                 "startblock": 12451860,
+                 "enddingblock": 14208889
+                },{
+                 "address": "0x33F6DDAEa2a8a54062E021873bCaEE006CdF4007",
+                 "startblock": 12452130,
+                 "enddingblock": 14145259
+                },{
+                 "address": "0xD18140b4B819b895A3dba5442F959fA44994AF50",
+                 "startblock": 13153660,
+                 "enddingblock": 14222859
+                }
+             ]
+        }
+    ]
+
+    scans_CRV = [
+        {
+            "mainnetURL": "https://api.etherscan.io/api",
+            "apikey": "PP4YZQY672JIYIV6BG6H5GWQA5XJ5A3IS1",
+            "project": "CRV",
+            "mainnet": "ETH",
+            "items": [{
+                "address": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+                "startblock": 10809470,
+                "enddingblock": 14220759
+            }, {
+                "address": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xDeBF20617708857ebe4F679508E7b7863a8A8EeE",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xA96A65c051bF88B4095Ee1f2451C2A9d43F53Ae2",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xaA17A236F2bAdc98DDc0Cf999AbB47D47Fc0A6Cf",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xb6c057591E073249F2D9D88Ba59a46CFC9B59EdB",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xeB21209ae4C2c9FF2a86ACA31E123764A3B6Bc06",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x0Ce6a5fF5217e38315f87032CF90686C96627CAA",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x194eBd173F6cDacE046C53eACcE9B953F28411d1",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x4CA9b3063Ec5866A4B82E437059D2C43d1be596F",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x071c661B4DeefB59E2a3DdB20Db036821eeE8F4b",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xC45b2EEe6e09cA176Ca3bB5f7eEe7C47bF93c756",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x410e3E86ef427e30B9235497143881f717d93c2A",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x1de7f0866e2c4adAC7b457c58Cc25c8688CDa1f2",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x6D65b498cb23deAba52db31c93Da9BFFb340FB8F",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xd5BCf53e2C81e1991570f33Fa881c49EEa570C8D",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xd81dA8D904b52208541Bade1bD6595D8a251F8dd",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x2fE94ea3d5d4a175184081439753DE15AeF9d614",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x11F419AdAbbFF8d595E7d5b223eee3863Bb3902C",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x7F55DDe206dbAD629C080068923b36fe9D6bDBeF",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xDE5331AC4B3630f94853Ff322B66407e0D6331E8",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xBE175115BF33E12348ff77CcfEE4726866A0Fbd5",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xC18cC39da8b11dA8c3541C598eE022258F9744da",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xB0a0716841F2Fc03fbA72A891B8Bb13584F52F2d",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x890f4e345B1dAED0367A877a1612f86A1f86985f",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x94e131324b6054c0D789b190b2dAC504e4361b53",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xd662908ADA2Ea1916B3318327A97eB18aD588b5d",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x9582C4ADACB3BCE56Fea3e590F05c3ca2fb9C477",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x6d10ed2cF043E6fcf51A0e7b4C2Af3Fa06695707",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xdFc7AdFa664b08767b735dE28f9E84cd30492aeE",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x69Fb7c45726cfE2baDeE8317005d3F94bE838840",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x7ca5b0a2910B33e9759DC7dDB0413949071D7575",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xAEA6c312f4b3E04D752946d329693F7293bC2e6D",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x90Bb609649E0451E5aD952683D64BD2d1f245840",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x72e158d38dbd50a483501c24f792bdaaa3e7d55c",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xC5cfaDA84E902aD92DD40194f0883ad49639b023",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xD533a949740bb3306d119CC777fa900bA034cd52",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xA464e6DCda8AC41e03616F95f4BC98a13b8922Dc",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x2F50D538606Fa9EDD2B11E2446BEb18C9D5846bB",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xd061D61a4d941c39E5453435B6345Dc261C2fcE0",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x5f3b5DfEb7B28CDbD7FAba78963EE202a494e2A2",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x575ccd8e2d300e2377b43478339e364000318e2c",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x4c18E409Dc8619bFb6a1cB56D114C3f592E0aE79",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x519AFB566c05E00cfB9af73496D00217A630e4D5",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0xeCb456EA5365865EbAb8a2661B0c503410e9B347",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            }, {
+                "address": "0x3687367CcAEBBE89f1bc8Eae7592b4Eed44Ac0Bd",
+                "startblock": 10809460,
+                "enddingblock": 14219519
+            },{
+                 "address": "0xE478de485ad2fe566d49342Cbd03E49ed7DB3356",
+                 "startblock": 10649300,
+                 "enddingblock": 14221569
+                },{
+                 "address": "0xBCfF8B0b9419b9A88c44546519b1e909cF330399",
+                 "startblock": 10649720,
+                 "enddingblock": 14221569
+                }
+            ]
+        }
+    ]
+
+    scans_bak = [
+        {
+            "mainnetURL": "https://api.etherscan.io/api",
+             "apikey": "PP4YZQY672JIYIV6BG6H5GWQA5XJ5A3IS1",
              "project": "OHM",
              "mainnet": "ETH",
              "items":[{

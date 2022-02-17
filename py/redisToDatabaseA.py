@@ -49,39 +49,42 @@ async def kline(_pool, exchangeIn="", tsIn=0):
                 )
                 await _kline.save(pool=_pool)
 
-async def contx(_pool, address="", project="", mainnet=""):
+async def contx(_pool):
     dataMem = DataCollect.DataMem
-    for i in range(10000):
-        keyAddress = address + "_" + str(i)
-        objNeedSave = dataMem.getTmp(keyAddress)
-        if not objNeedSave:
-            continue
-        decodejsonLst = objNeedSave.get("result")
-        for record in decodejsonLst:
-            print(record)
-            _contx = Contx(
-                blockNumber = record.get("blockNumber"),
-                timeStamp = record.get("timeStamp"),
-                hash = record.get("hash"),
-                nonce = record.get("nonce"),
-                blockHash = record.get("blockHash"),
-                transactionIndex = record.get("transactionIndex"),
-                addrfrom = record.get("from"),
-                addrto = record.get("to"),
-                value = record.get("value"),
-                gas = record.get("gas"),
-                gasPrice = record.get("gasPrice"),
-                isError = record.get("isError"),
-                txreceipt_status = record.get("txreceipt_status"),
-                contractAddress = record.get("contractAddress"),
-                cumulativeGasUsed = record.get("cumulativeGasUsed"),
-                gasUsed = record.get("gasUsed"),
-                confirmations = record.get("confirmations"),
-                mainnet=mainnet,
-                address = address,
-                project=project
-            )
-            await _contx.save(pool=_pool)
+    scans = Configuration.Configure.scans
+    for scan in scans:
+        for item in scan.get("items"):
+            for i in range(10000):
+                keyAddress = item.get("address") + "_" + str(i)
+                objNeedSave = dataMem.getTmp(keyAddress)
+                if not objNeedSave:
+                    continue
+                decodejsonLst = objNeedSave.get("result")
+                for record in decodejsonLst:
+                    print(record)
+                    _contx = Contx(
+                        blockNumber = record.get("blockNumber"),
+                        timeStamp = record.get("timeStamp"),
+                        hash = record.get("hash"),
+                        nonce = record.get("nonce"),
+                        blockHash = record.get("blockHash"),
+                        transactionIndex = record.get("transactionIndex"),
+                        addrfrom = record.get("from"),
+                        addrto = record.get("to"),
+                        value = record.get("value"),
+                        gas = record.get("gas"),
+                        gasPrice = record.get("gasPrice"),
+                        isError = record.get("isError"),
+                        txreceipt_status = record.get("txreceipt_status"),
+                        contractAddress = record.get("contractAddress"),
+                        cumulativeGasUsed = record.get("cumulativeGasUsed"),
+                        gasUsed = record.get("gasUsed"),
+                        confirmations = record.get("confirmations"),
+                        mainnet=scan.get("mainnet"),
+                        address = item.get("address"),
+                        project=scan.get("project")
+                    )
+                    await _contx.save(pool=_pool)
 
 async def main(loop):
     # get database connect pool
@@ -104,10 +107,7 @@ async def main(loop):
         tsIn=now
     )
     coroutine_contxSave = contx(
-        _pool=pool,
-        address="0xc8c436271f9a6f10a5b80c8b8ed7d0e8f37a612d",
-        project="OHM",
-        mainnet="ETH"
+        _pool=pool
     )
     #tasks.append(coroutine_mktKlineSave)
     tasks.append(coroutine_contxSave)
