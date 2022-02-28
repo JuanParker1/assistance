@@ -43,52 +43,16 @@ class Configure:
 
     scans = [
         {
-            "mainnetURL": "https://api.etherscan.io/api",
-             "apikey": "PP4YZQY672JIYIV6BG6H5GWQA5XJ5A3IS1",
-             "project": "CRV",
-             "mainnet": "ETH",
-             "items":[{
-                 "address": "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
-                 "startblock": 12450990,
-                 "enddingblock": 14222747
-                },{
-                 "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
-                 "startblock": 12450980,
-                 "enddingblock": 14222819
-                },{
-                 "address": "0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7",
-                 "startblock": 12451010,
-                 "enddingblock": 14222579
-                },{
-                 "address": "0x8014595F2AB54cD7c604B00E9fb932176fDc86Ae",
-                 "startblock": 12451010,
-                 "enddingblock": 14222559
-                },{
-                 "address": "0xCF50b810E57Ac33B91dCF525C6ddd9881B139332",
-                 "startblock": 12451030,
-                 "enddingblock": 14222779
-                },{
-                 "address": "0x3Fe65692bfCD0e6CF84cB1E7d24108E434A7587e",
-                 "startblock": 12451030,
-                 "enddingblock": 14222679
-                },{
-                 "address": "0x2E088A0A19dda628B4304301d1EA70b114e4AcCd",
-                 "startblock": 12451280,
-                 "enddingblock": 14214679
-                },{
-                 "address": "0x05767d9EF41dC40689678fFca0608878fb3dE906",
-                 "startblock": 12451860,
-                 "enddingblock": 14208889
-                },{
-                 "address": "0x33F6DDAEa2a8a54062E021873bCaEE006CdF4007",
-                 "startblock": 12452130,
-                 "enddingblock": 14145259
-                },{
-                 "address": "0xD18140b4B819b895A3dba5442F959fA44994AF50",
-                 "startblock": 13153660,
-                 "enddingblock": 14222859
-                }
-             ]
+            "mainnetURL": "https://api.ftmscan.com/api",  # AVAX MAINNET
+            "apikey": "RY9G47H4E69IIEYM64S3E4JE2AIPNBA672",  # AVAX MAINNET
+            "project": "solidex",
+            "mainnet": "FTM",
+            "items": [
+                {"address": "0x26E1A0d851CF28E697870e1b7F053B605C8b060F",
+                 "startblock": 31709724,
+                 "enddingblock": 31997689
+                 }
+            ]
         }
     ]
 
@@ -364,6 +328,17 @@ class Configure:
                 {"address": "0x771ad65bf2837c89a1cc0a0fc601d9de7f217b52",
                  "startblock": 6725070,
                  "enddingblock": 10821139
+                 }
+            ]
+        },{
+            "mainnetURL": "https://ftmscan.com/api",#AVAX MAINNET
+            "apikey": "RY9G47H4E69IIEYM64S3E4JE2AIPNBA672", #AVAX MAINNET
+            "project": "",
+            "mainnet": "FTM",
+            "items": [
+                {"address": "0x26E1A0d851CF28E697870e1b7F053B605C8b060F",
+                 "startblock": 31709720,
+                 "enddingblock": 31997298
                  }
             ]
         }

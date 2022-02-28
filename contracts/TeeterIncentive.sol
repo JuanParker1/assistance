@@ -61,8 +61,8 @@ contract TeeterIncentive {
 
     constructor() public {
         administrator = msg.sender;
-        symbol = "TINC";
-        name = "TINC";
+        symbol = "TC";
+        name = "TC";
         //balanceLast = IERC20(rewardToken).balanceOf(address(this));
     }
 

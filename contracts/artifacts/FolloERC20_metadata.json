@@ -84,6 +84,21 @@
 			},
 			{
 				"constant": true,
+				"inputs": [],
+				"name": "Aamt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
 				"inputs": [
 					{
 						"internalType": "address",
@@ -447,6 +462,32 @@
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "transferQTY",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -474,10 +515,10 @@
 	},
 	"sources": {
 		"localhost/contracts/ERC20JAM.sol": {
-			"keccak256": "0x09824e296f2c940f8541d18cd1f2df54f42040551b32365284ff4b0f5f5be21e",
+			"keccak256": "0x60575523c8be03fdfe523eabbbc9e8d7171356c3e1eb4923756303ac907e1d6f",
 			"urls": [
-				"bzz-raw://92bc6189f9b4c79de95e3cd62234a5bf35b7aed21a0b476ef89319699fffe1e8",
-				"dweb:/ipfs/QmSs4CjXzPfFpiZAs4FFAE3R9jSoykFrCQiBYifeA414Am"
+				"bzz-raw://31a3b1b8fbac85093aa0114c6b08919f8e287aa5edbb23c670c2d09457277162",
+				"dweb:/ipfs/Qmb8uv4rzm5efK4sU4KRXmzamYL7MjjGYqZRvsyNkZYYVY"
 			]
 		},
 		"localhost/contracts/libraries/SafeMath.sol": {

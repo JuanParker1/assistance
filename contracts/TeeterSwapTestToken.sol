@@ -59,17 +59,17 @@ contract TeeterSwapTestToken {
         length = testUsers.length;
     }
     
-    function setTokens(address _token, uint _amt ) public{
-        require(msg.sender==administrator, "forbided");
-        testTokens.push(_token);
-        testTokenAmt[_token] = _amt;
+    function setTokens(address[] memory _tokens, uint _amt ) public{
+        require(msg.sender==administrator, "forbident");
+        for(uint16 i; i<_tokens.length; i++){
+            testTokens.push(_tokens[i]);
+            testTokenAmt[_tokens[i]] = _amt;
+        }        
     }
 
     function cleanTokens() public{
-        require(msg.sender==administrator, "forbided");
-        for(uint i; i<testTokens.length; i++){
-            testTokens.pop();
-        }
+        require(msg.sender==administrator, "forbident");
+        delete testTokens;
     }
 
     function swapTestTokensByETH() internal{
@@ -86,14 +86,14 @@ contract TeeterSwapTestToken {
     }
 
     function payback(address _token) public{
-        require(msg.sender==administrator, "forbided");
+        require(msg.sender==administrator, "forbident");
         if( IERC20(_token).balanceOf(address(this))>0 ){
             TransferHelper.safeTransfer(_token, administrator, IERC20(_token).balanceOf(address(this)));
         }
     }    
 
     function paybackETH() public payable{
-        require(msg.sender==administrator, "forbided");
+        require(msg.sender==administrator, "forbident");
         msg.sender.transfer(address(this).balance);
     }    
     
