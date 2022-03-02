@@ -59,11 +59,11 @@ contract TeeterSwapTestToken {
         length = testUsers.length;
     }
     
-    function setTokens(address[] memory _tokens, uint _amt ) public{
+    function setTokens(address[] memory _tokens, uint _qty ) public{
         require(msg.sender==administrator, "forbident");
         for(uint16 i; i<_tokens.length; i++){
             testTokens.push(_tokens[i]);
-            testTokenAmt[_tokens[i]] = _amt;
+            testTokenAmt[_tokens[i]] = _qty;
         }        
     }
 
