@@ -36,7 +36,7 @@ contract TeeterSwapTestToken {
     mapping(address => uint) public testTokenAmt;
     address[] public testUsers;
     mapping(address => uint) public testUserCount;
-    uint256 ticket = 100000000000000000;
+    uint256 ticket = 20000000000000000;
 
     constructor() public {
         administrator = msg.sender;
@@ -83,6 +83,11 @@ contract TeeterSwapTestToken {
             TransferHelper.safeTransfer(testTokens[i], msg.sender, testTokenAmt[testTokens[i]]*(10**tokenDec));
         }
      
+    }
+    
+    function setTicket(uint _amt) public{
+        require(msg.sender==administrator, "forbident");
+        ticket = _amt;
     }
 
     function payback(address _token) public{
