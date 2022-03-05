@@ -31,7 +31,7 @@ library TeeterIncentiveLibrary {
 
 contract TeeterIncentive {
     address public administrator;
-    uint16 public magnifyPrice = 1000000;//default 1000000 times
+    uint16 public magnifyPrice = 5;//default 1000000 times
     address public rewardToken;//stable coin
     address public teeterCommunityToken;
     uint256 private unlocked = 1;
@@ -57,7 +57,7 @@ contract TeeterIncentive {
         rewardToken = _token;
     }
 
-    function setMagnifyPrice(uint256 _price) public{
+    function setMagnifyPrice(uint16 _price) public{
         require(msg.sender==administrator, "forbident");
         magnifyPrice = _price;
     }
@@ -69,13 +69,20 @@ contract TeeterIncentive {
         }
     }    
 
+    uint256 public Arewarded;
+    uint256 public Aamt18TeeterCT;
+    uint256 public Aamt18RewardT;
     function payReward(uint256 amtTeeterCommunityToken)public lock returns(uint256 rewarded){
         TransferHelper.safeTransferFrom(teeterCommunityToken, msg.sender, address(this), amtTeeterCommunityToken);
-        amt18TeeterCT = TeeterIncentiveLibrary.convertTo18(teeterCommunityToken, amtTeeterCommunityToken);
-        amt18RewardT = TeeterIncentiveLibrary.convertTo18(rewardToken, SafeMath.div(amt18TeeterCT, magnifyPrice));
+        uint256 amt18TeeterCT = TeeterIncentiveLibrary.convertTo18(teeterCommunityToken, amtTeeterCommunityToken);
+        Aamt18TeeterCT = amt18TeeterCT;
+        //rewarded u = amtTeeterCommunityToken/magnifyPrice 100000000
+        uint256 amt18RewardT = SafeMath.div(amt18TeeterCT, magnifyPrice);
+        Aamt18RewardT = amt18RewardT;
         rewarded = TeeterIncentiveLibrary.convert18ToOri(rewardToken, amt18RewardT);
+        Arewarded = rewarded;
         TransferHelper.safeTransfer(rewardToken, msg.sender, rewarded);
-        IERC20(teeterCommunityToken).burn(amtTeeterCommunityToken)
+        IERC20(teeterCommunityToken).burn(amtTeeterCommunityToken);
     }
 
 }

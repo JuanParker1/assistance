@@ -171,6 +171,27 @@
 				"type": "function"
 			},
 			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"constant": true,
 				"inputs": [],
 				"name": "decimals",
@@ -515,10 +536,10 @@
 	},
 	"sources": {
 		"localhost/contracts/ERC20JAM.sol": {
-			"keccak256": "0x60575523c8be03fdfe523eabbbc9e8d7171356c3e1eb4923756303ac907e1d6f",
+			"keccak256": "0x8658b6daf0abdcf6c7aa0a97b9f6ccb35e9661624b949a1b137973b5ff7325fb",
 			"urls": [
-				"bzz-raw://31a3b1b8fbac85093aa0114c6b08919f8e287aa5edbb23c670c2d09457277162",
-				"dweb:/ipfs/Qmb8uv4rzm5efK4sU4KRXmzamYL7MjjGYqZRvsyNkZYYVY"
+				"bzz-raw://ba56c13a61095c247a3614c3d07078f35957cd12c54009e8fc33e52ce4184e70",
+				"dweb:/ipfs/QmUwUaA9Avpdo51db6E5GXsBpiCd5c7KXNbGQLijsSbwEi"
 			]
 		},
 		"localhost/contracts/libraries/SafeMath.sol": {

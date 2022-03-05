@@ -14,7 +14,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/TeeterSwapTestToken.sol": "TeeterIncentiveLibrary"
+			"localhost/contracts/TeeterIncentive.sol": "TeeterIncentiveLibrary"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -25,18 +25,18 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/contracts/TeeterSwapTestToken.sol": {
-			"keccak256": "0xff24c827730306691bf2095ca6c2afb3a35e1aee8d340a146913b9bf36a14981",
+		"localhost/contracts/TeeterIncentive.sol": {
+			"keccak256": "0xe6285311fa41aa8095a49748a0ee134b84497981cef4ed70ac326f483c9c92c9",
 			"urls": [
-				"bzz-raw://95e80cb3d1ee9cbafdbd00bab0c3e1f9ff1aa9d21a4de33daa4a8979dba08ef3",
-				"dweb:/ipfs/QmeSxgG6gM4CoCL6JxywbjhAtjbGKTGQEUgXK8LpPPV4AG"
+				"bzz-raw://5555728aea6b97660c4c6d1da727a8e48d7643b9793025e9fd51830948464b10",
+				"dweb:/ipfs/QmXBUezUSUFFfQFAWTSSnc2hKWpFZACdLo5CP9Spg4dvTG"
 			]
 		},
 		"localhost/contracts/interfaces/IERC20.sol": {
-			"keccak256": "0x12de1b69f24b30d370331246b2a852d0336d4f5f2e11eb3fa51eb1ce1edc6ea0",
+			"keccak256": "0x8e0e9a52d2224e1e325f5388e07c9e747597bcc5c5c6678806887b3cc4715d13",
 			"urls": [
-				"bzz-raw://17c8abbea0666c141f22670e0f26539e5019fbdf87f1b4128808fb8e74358883",
-				"dweb:/ipfs/QmTDunWwzdQ89bpEngnAgswpuAfF5RpScYQwmADdMy6afA"
+				"bzz-raw://73e5956f2b21cbcd84e33d82c1a9c52858933c660bc78b912455802c20cdb2f0",
+				"dweb:/ipfs/QmYEZd8E1DXbS7q8zqSVTGSasiiFkkp3ayb7c8ffzskftJ"
 			]
 		},
 		"localhost/contracts/libraries/SafeMath.sol": {

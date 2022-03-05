@@ -12,54 +12,49 @@
 				"type": "constructor"
 			},
 			{
-				"anonymous": false,
-				"inputs": [
+				"constant": true,
+				"inputs": [],
+				"name": "Aamt18RewardT",
+				"outputs": [
 					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "spender",
-						"type": "address"
-					},
-					{
-						"indexed": false,
 						"internalType": "uint256",
-						"name": "value",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "Approval",
-				"type": "event"
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
-				"anonymous": false,
-				"inputs": [
+				"constant": true,
+				"inputs": [],
+				"name": "Aamt18TeeterCT",
+				"outputs": [
 					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
-						"indexed": false,
 						"internalType": "uint256",
-						"name": "value",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "Transfer",
-				"type": "event"
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "Arewarded",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"constant": true,
@@ -78,141 +73,8 @@
 			},
 			{
 				"constant": true,
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "allowance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "spender",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "value",
-						"type": "uint256"
-					}
-				],
-				"name": "approve",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": true,
 				"inputs": [],
-				"name": "balanceLast",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "balanceOf",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "decimals",
-				"outputs": [
-					{
-						"internalType": "uint8",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "getPrice",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "_price",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [],
-				"name": "mint",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "QTYAdded",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "multiplier",
+				"name": "magnifyPrice",
 				"outputs": [
 					{
 						"internalType": "uint16",
@@ -225,47 +87,11 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "name",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "nonces",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"constant": false,
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "amt",
+						"name": "amtTeeterCommunityToken",
 						"type": "uint256"
 					}
 				],
@@ -316,11 +142,11 @@
 				"inputs": [
 					{
 						"internalType": "uint16",
-						"name": "_multi",
+						"name": "_price",
 						"type": "uint16"
 					}
 				],
-				"name": "setMultiplier",
+				"name": "setMagnifyPrice",
 				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
@@ -342,90 +168,33 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [],
-				"name": "symbol",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "totalSupply",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"constant": false,
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "_token",
 						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "value",
-						"type": "uint256"
 					}
 				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "setTeeterCommunityToken",
+				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "value",
-						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
+				"constant": true,
+				"inputs": [],
+				"name": "teeterCommunityToken",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"internalType": "address",
 						"name": "",
-						"type": "bool"
+						"type": "address"
 					}
 				],
 				"payable": false,
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -450,17 +219,17 @@
 	},
 	"sources": {
 		"localhost/contracts/TeeterIncentive.sol": {
-			"keccak256": "0xb5b595a00daa13886c4d14659b6f9109d9aaf4d5ad5df71f4b37178ea4d77328",
+			"keccak256": "0xe6285311fa41aa8095a49748a0ee134b84497981cef4ed70ac326f483c9c92c9",
 			"urls": [
-				"bzz-raw://dcb2ef4d0d7952051f898fb425c8ca5dea39f78776a3034f71c1eccbfd72ea63",
-				"dweb:/ipfs/QmZwd2fnVM6Rjw9MuRzcpPLrxWRSNj7R5Xkcp4fmniHLQe"
+				"bzz-raw://5555728aea6b97660c4c6d1da727a8e48d7643b9793025e9fd51830948464b10",
+				"dweb:/ipfs/QmXBUezUSUFFfQFAWTSSnc2hKWpFZACdLo5CP9Spg4dvTG"
 			]
 		},
 		"localhost/contracts/interfaces/IERC20.sol": {
-			"keccak256": "0x12de1b69f24b30d370331246b2a852d0336d4f5f2e11eb3fa51eb1ce1edc6ea0",
+			"keccak256": "0x8e0e9a52d2224e1e325f5388e07c9e747597bcc5c5c6678806887b3cc4715d13",
 			"urls": [
-				"bzz-raw://17c8abbea0666c141f22670e0f26539e5019fbdf87f1b4128808fb8e74358883",
-				"dweb:/ipfs/QmTDunWwzdQ89bpEngnAgswpuAfF5RpScYQwmADdMy6afA"
+				"bzz-raw://73e5956f2b21cbcd84e33d82c1a9c52858933c660bc78b912455802c20cdb2f0",
+				"dweb:/ipfs/QmYEZd8E1DXbS7q8zqSVTGSasiiFkkp3ayb7c8ffzskftJ"
 			]
 		},
 		"localhost/contracts/libraries/SafeMath.sol": {
