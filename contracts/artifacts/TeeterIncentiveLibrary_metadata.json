@@ -14,7 +14,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/contracts/TeeterIncentive.sol": "TeeterIncentiveLibrary"
+			"localhost/contracts/TeeterSwapTestToken.sol": "TeeterIncentiveLibrary"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -25,11 +25,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"localhost/contracts/TeeterIncentive.sol": {
-			"keccak256": "0xe6285311fa41aa8095a49748a0ee134b84497981cef4ed70ac326f483c9c92c9",
+		"localhost/contracts/TeeterSwapTestToken.sol": {
+			"keccak256": "0xff24c827730306691bf2095ca6c2afb3a35e1aee8d340a146913b9bf36a14981",
 			"urls": [
-				"bzz-raw://5555728aea6b97660c4c6d1da727a8e48d7643b9793025e9fd51830948464b10",
-				"dweb:/ipfs/QmXBUezUSUFFfQFAWTSSnc2hKWpFZACdLo5CP9Spg4dvTG"
+				"bzz-raw://95e80cb3d1ee9cbafdbd00bab0c3e1f9ff1aa9d21a4de33daa4a8979dba08ef3",
+				"dweb:/ipfs/QmeSxgG6gM4CoCL6JxywbjhAtjbGKTGQEUgXK8LpPPV4AG"
 			]
 		},
 		"localhost/contracts/interfaces/IERC20.sol": {
