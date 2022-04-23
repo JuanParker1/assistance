@@ -1,8 +1,77 @@
-pragma solidity =0.5.16;
+pragma solidity ^0.5.6;
 
-import "./interfaces/IERC20.sol";
-import "./libraries/SafeMath.sol";
-import "./libraries/TransferHelper.sol";
+interface IERC20 {
+    event Approval(address indexed owner, address indexed spender, uint value);
+    event Transfer(address indexed from, address indexed to, uint value);
+
+    function name() external view returns (string memory);
+    function symbol() external view returns (string memory);
+    function decimals() external view returns (uint8);
+    function totalSupply() external view returns (uint);
+    function balanceOf(address owner) external view returns (uint);
+    function allowance(address owner, address spender) external view returns (uint);
+    function burn(uint256 amt) external returns (bool);
+    function approve(address spender, uint value) external returns (bool);
+    function transfer(address to, uint value) external returns (bool);
+    function transferFrom(address from, address to, uint value) external returns (bool);
+}
+
+
+pragma solidity ^0.5.6;
+
+// a library for performing overflow-safe math, courtesy of DappHub (https://github.com/dapphub/ds-math)
+
+library SafeMath {
+    function add(uint x, uint y) internal pure returns (uint z) {
+        require((z = x + y) >= x, 'ds-math-add-overflow');
+    }
+
+    function sub(uint x, uint y) internal pure returns (uint z) {
+        require((z = x - y) <= x, 'ds-math-sub-underflow');
+    }
+
+    function mul(uint x, uint y) internal pure returns (uint z) {
+        require(y == 0 || (z = x * y) / y == x, 'ds-math-mul-overflow');
+    }
+    
+    function div(uint256 a, uint256 b) internal pure returns (uint256) {
+        require(b > 0, 'ds-math-div-overflow');
+        uint256 c = a / b;
+        return c;
+    }
+}
+
+pragma solidity ^0.5.6;
+
+// helper methods for interacting with ERC20 tokens and sending ETH that do not consistently return true/false
+library TransferHelper {
+    function safeApprove(address token, address to, uint value) internal {
+        // bytes4(keccak256(bytes('approve(address,uint256)')));
+        (bool success, bytes memory data) = token.call(abi.encodeWithSelector(0x095ea7b3, to, value));
+        require(success && (data.length == 0 || abi.decode(data, (bool))), 'TransferHelper: APPROVE_FAILED');
+    }
+
+    function safeTransfer(address token, address to, uint value) internal {
+        // bytes4(keccak256(bytes('transfer(address,uint256)')));
+        (bool success, bytes memory data) = token.call(abi.encodeWithSelector(0xa9059cbb, to, value));
+        require(success && (data.length == 0 || abi.decode(data, (bool))), 'TransferHelper: TRANSFER_FAILED');
+    }
+
+    function safeTransferFrom(address token, address from, address to, uint value) internal {
+        // bytes4(keccak256(bytes('transferFrom(address,address,uint256)')));
+        (bool success, bytes memory data) = token.call(abi.encodeWithSelector(0x23b872dd, from, to, value));
+        require(success && (data.length == 0 || abi.decode(data, (bool))), 'TransferHelper: TRANSFER_FROM_FAILED');
+    }
+
+    function safeTransferETH(address to, uint value) internal {
+        // solium-disable-next-line
+        (bool success,) = to.call.value(value)(new bytes(0));
+        require(success, 'TransferHelper: ETH_TRANSFER_FAILED');
+    }
+}
+
+
+pragma solidity =0.5.16;
 
 library TeeterIncentiveLibrary {
     function convertTo18(address token, uint256 amtToken) internal view returns (uint amtCovert){
@@ -69,18 +138,12 @@ contract TeeterIncentive {
         }
     }    
 
-    uint256 public Arewarded;
-    uint256 public Aamt18TeeterCT;
-    uint256 public Aamt18RewardT;
     function payReward(uint256 amtTeeterCommunityToken)public lock returns(uint256 rewarded){
         TransferHelper.safeTransferFrom(teeterCommunityToken, msg.sender, address(this), amtTeeterCommunityToken);
         uint256 amt18TeeterCT = TeeterIncentiveLibrary.convertTo18(teeterCommunityToken, amtTeeterCommunityToken);
-        Aamt18TeeterCT = amt18TeeterCT;
         //rewarded u = amtTeeterCommunityToken/magnifyPrice 100000000
         uint256 amt18RewardT = SafeMath.div(amt18TeeterCT, magnifyPrice);
-        Aamt18RewardT = amt18RewardT;
         rewarded = TeeterIncentiveLibrary.convert18ToOri(rewardToken, amt18RewardT);
-        Arewarded = rewarded;
         TransferHelper.safeTransfer(rewardToken, msg.sender, rewarded);
         IERC20(teeterCommunityToken).burn(amtTeeterCommunityToken);
     }

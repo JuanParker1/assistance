@@ -14,51 +14,6 @@
 			{
 				"constant": true,
 				"inputs": [],
-				"name": "Aamt18RewardT",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "Aamt18TeeterCT",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
-				"name": "Arewarded",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": true,
-				"inputs": [],
 				"name": "administrator",
 				"outputs": [
 					{
@@ -219,31 +174,10 @@
 	},
 	"sources": {
 		"localhost/contracts/TeeterIncentive.sol": {
-			"keccak256": "0xe6285311fa41aa8095a49748a0ee134b84497981cef4ed70ac326f483c9c92c9",
+			"keccak256": "0x515d524b3779b23e95e0eca3e2d4709ec2f6f4f2aa2bc0269edd5742fd3d83a0",
 			"urls": [
-				"bzz-raw://5555728aea6b97660c4c6d1da727a8e48d7643b9793025e9fd51830948464b10",
-				"dweb:/ipfs/QmXBUezUSUFFfQFAWTSSnc2hKWpFZACdLo5CP9Spg4dvTG"
-			]
-		},
-		"localhost/contracts/interfaces/IERC20.sol": {
-			"keccak256": "0x8e0e9a52d2224e1e325f5388e07c9e747597bcc5c5c6678806887b3cc4715d13",
-			"urls": [
-				"bzz-raw://73e5956f2b21cbcd84e33d82c1a9c52858933c660bc78b912455802c20cdb2f0",
-				"dweb:/ipfs/QmYEZd8E1DXbS7q8zqSVTGSasiiFkkp3ayb7c8ffzskftJ"
-			]
-		},
-		"localhost/contracts/libraries/SafeMath.sol": {
-			"keccak256": "0x853c86c1adb56eb7da049fd08a405720740193e12df31ac4298103ce0b0ca180",
-			"urls": [
-				"bzz-raw://a75553f7f4160eadf9a14bc04bc097377f98220b1d936e3ec0f6fb26e1fd40ed",
-				"dweb:/ipfs/QmYBNA1vTFfxug4TzZt4fr6KxasfogiFRpxeezVGCKa9S2"
-			]
-		},
-		"localhost/contracts/libraries/TransferHelper.sol": {
-			"keccak256": "0x6a2681333f7002d314ed9f58b2733a34825b1fa5a0008603095ecb8f2c964b59",
-			"urls": [
-				"bzz-raw://56e86113bfed3d602033f57b9ea49fa83a28ce041abdba2be5e685921a382e27",
-				"dweb:/ipfs/QmfYpUJjdzPB85wrfojQNiH6RuZUfnekLSRAqSe4FjsfpC"
+				"bzz-raw://85a5f150f40c6aa9dc610a4efb533304190a6b21d2b678025cc56febd919f9e0",
+				"dweb:/ipfs/QmYWdhU13424z4SJBKomupdkL2PTXdVoKoXPvEp1SFh9EQ"
 			]
 		}
 	},
