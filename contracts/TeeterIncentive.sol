@@ -16,6 +16,91 @@ interface IERC20 {
     function transferFrom(address from, address to, uint value) external returns (bool);
 }
 
+pragma solidity =0.5.16;
+
+contract TCERC20 {
+    using SafeMath for uint256;
+    string public name;
+    string public symbol;
+    uint8 public decimals;
+    uint256 public totalSupply;
+    mapping(address => uint256) public balanceOf;
+    mapping(address => mapping(address => uint256)) public allowance;
+    mapping(address => uint256) public nonces;
+
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    // constructor(uint256 initialSupply, uint8 initDecimals, string memory tokenName, string memory tokenSymbol) public {
+    //     decimals = initDecimals;
+    //     totalSupply = initialSupply * 10 ** uint256(initDecimals);
+    //     name = tokenName;
+    //     symbol = tokenSymbol;
+    //     balanceOf[msg.sender] = totalSupply;
+    // }
+
+    function _mint(address to, uint256 value) internal {
+        totalSupply = totalSupply.add(value);
+        balanceOf[to] = balanceOf[to].add(value);
+        emit Transfer(address(0), to, value);
+    }
+
+    function _burn(address from, uint256 value) internal {
+        balanceOf[from] = balanceOf[from].sub(value);
+        totalSupply = totalSupply.sub(value);
+        emit Transfer(from, address(0), value);
+    }
+
+    function _approve(
+        address owner,
+        address spender,
+        uint256 value
+    ) private {
+        allowance[owner][spender] = value;
+        emit Approval(owner, spender, value);
+    }
+
+    function _transfer(
+        address from,
+        address to,
+        uint256 value
+    ) private {
+        balanceOf[from] = balanceOf[from].sub(value);
+        balanceOf[to] = balanceOf[to].add(value);
+        emit Transfer(from, to, value);
+    }
+
+    function approve(address spender, uint256 value) external returns (bool) {
+        _approve(msg.sender, spender, value);
+        return true;
+    }
+
+    function transfer(address to, uint256 value) public returns (bool) {
+        _transfer(msg.sender, to, value);
+        return true;
+    }
+    
+    function burn(uint256 amt) external returns (bool) {
+        _burn(msg.sender, amt);
+        return true;
+    }
+    
+    function transferFrom(
+        address from,
+        address to,
+        uint256 value
+    ) external returns (bool) {
+        require(value <= allowance[from][msg.sender]);
+        allowance[from][msg.sender] -= value;
+        _transfer(from, to, value);
+        return true;
+    }
+}
 
 pragma solidity ^0.5.6;
 
@@ -98,11 +183,10 @@ library TeeterIncentiveLibrary {
 
 }
 
-contract TeeterIncentive {
+contract TeeterIncentive is TCERC20{
     address public administrator;
     uint16 public magnifyPrice = 5;//default 1000000 times
     address public rewardToken;//stable coin
-    address public teeterCommunityToken;
     uint256 private unlocked = 1;
 
     modifier lock() {
@@ -112,13 +196,13 @@ contract TeeterIncentive {
         unlocked = 1;
     }    
 
-    constructor() public {
+    constructor(uint256 initialSupply, string memory tokenName, string memory tokenSymbol) public {
         administrator = msg.sender;
-    }
-
-    function setTeeterCommunityToken(address _token) public{
-        require(msg.sender==administrator, "forbident");
-        teeterCommunityToken = _token;
+        decimals = 18;
+        totalSupply = initialSupply * 10 ** uint256(18);
+        name = tokenName;
+        symbol = tokenSymbol;
+        balanceOf[msg.sender] = totalSupply;
     }
 
     function setRewardToken(address _token) public{
@@ -138,14 +222,13 @@ contract TeeterIncentive {
         }
     }    
 
-    function payReward(uint256 amtTeeterCommunityToken)public lock returns(uint256 rewarded){
-        TransferHelper.safeTransferFrom(teeterCommunityToken, msg.sender, address(this), amtTeeterCommunityToken);
-        uint256 amt18TeeterCT = TeeterIncentiveLibrary.convertTo18(teeterCommunityToken, amtTeeterCommunityToken);
-        //rewarded u = amtTeeterCommunityToken/magnifyPrice 100000000
-        uint256 amt18RewardT = SafeMath.div(amt18TeeterCT, magnifyPrice);
+    function redeem(uint256 amtTeeterCommunityToken)public lock returns(uint256 rewarded){
+        require(this.balanceOf(msg.sender)>=amtTeeterCommunityToken, "insufficient TC");
+        transfer(address(this), amtTeeterCommunityToken);
+        uint256 amt18RewardT = SafeMath.div(amtTeeterCommunityToken, magnifyPrice);
         rewarded = TeeterIncentiveLibrary.convert18ToOri(rewardToken, amt18RewardT);
+        require(IERC20(rewardToken).balanceOf(address(this)) >= rewarded, "insufficient reward");
         TransferHelper.safeTransfer(rewardToken, msg.sender, rewarded);
-        IERC20(teeterCommunityToken).burn(amtTeeterCommunityToken);
     }
 
 }

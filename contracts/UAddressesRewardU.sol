@@ -82,6 +82,7 @@ contract UAddressesRewardU is IUAddressesRewardU{
   }    
   
   function setRewardToken(address _addrRewardToken) public{
+      require(msg.sender==holder, "forbident");
       addrRewardToken = _addrRewardToken;
   }
 
