@@ -26,10 +26,10 @@
 	},
 	"sources": {
 		"localhost/contracts/TeeterIncentive.sol": {
-			"keccak256": "0x17f39d4d296fca782e615375608dc6881dd0ac93f8815e91528f710fb05018e6",
+			"keccak256": "0xa91552dfcb5744f4b5a851d46532b12587242d5fc21ba1175a97b92a739f3917",
 			"urls": [
-				"bzz-raw://9030c68c3d76960501ff5f93d0bbd69638b0f83371fba1c0a9c2f3626ab49799",
-				"dweb:/ipfs/QmWRPcSMvEE3ZidoS4g4j1RH6uujip9yKSRsmSVTLN3pah"
+				"bzz-raw://9d7a4b8731733782e4e390091a3c682445df412d2cfda112c6ba2a4104e7f209",
+				"dweb:/ipfs/QmYhUeiAyicGEhQsuQ5tdCh4Ss294haa5uzVmqso5qfzc8"
 			]
 		}
 	},

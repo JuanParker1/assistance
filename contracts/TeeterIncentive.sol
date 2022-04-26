@@ -185,9 +185,11 @@ library TeeterIncentiveLibrary {
 
 contract TeeterIncentive is TCERC20{
     address public administrator;
-    uint16 public magnifyPrice = 5;//default 1000000 times
+    uint public magnifyPrice = 40;//Defaults
     address public rewardToken;//stable coin
     uint256 private unlocked = 1;
+    uint256 private marketValue = 40000000;//Defaults
+    uint256 private constant total = 100000000;//Defaults
 
     modifier lock() {
         require(unlocked == 1, "LOCKED");
@@ -196,23 +198,32 @@ contract TeeterIncentive is TCERC20{
         unlocked = 1;
     }    
 
-    constructor(uint256 initialSupply, string memory tokenName, string memory tokenSymbol) public {
+    constructor(uint256 initialSupply) public {
         administrator = msg.sender;
         decimals = 18;
         totalSupply = initialSupply * 10 ** uint256(18);
-        name = tokenName;
-        symbol = tokenSymbol;
+        name = "TC";
+        symbol = "TC";
         balanceOf[msg.sender] = totalSupply;
     }
+    
+    function info() external view returns(uint256 _marketValue, uint256 _teeterTotal, uint256 _TCTotalSupply, uint256 _TCPriceMul100){
+        _marketValue = marketValue;
+        _teeterTotal = total;
+        _TCTotalSupply = totalSupply/(10**18);
+        _TCPriceMul100 = marketValue*100/total;
+    }
+    
 
     function setRewardToken(address _token) public{
         require(msg.sender==administrator, "forbident");
         rewardToken = _token;
     }
 
-    function setMagnifyPrice(uint16 _price) public{
+    function setMagnifyPrice(uint256 _marketValue) public{
         require(msg.sender==administrator, "forbident");
-        magnifyPrice = _price;
+        marketValue = _marketValue;
+        magnifyPrice = SafeMath.div((_marketValue*100), total);
     }
 
     function payback(address _token) public{
@@ -222,10 +233,10 @@ contract TeeterIncentive is TCERC20{
         }
     }    
 
-    function redeem(uint256 amtTeeterCommunityToken)public lock returns(uint256 rewarded){
+    function redeem(uint256 amtTeeterCommunityToken) public lock returns(uint256 rewarded){
         require(this.balanceOf(msg.sender)>=amtTeeterCommunityToken, "insufficient TC");
         transfer(address(this), amtTeeterCommunityToken);
-        uint256 amt18RewardT = SafeMath.div(amtTeeterCommunityToken, magnifyPrice);
+        uint256 amt18RewardT = SafeMath.div(SafeMath.mul(amtTeeterCommunityToken, magnifyPrice), uint(100));
         rewarded = TeeterIncentiveLibrary.convert18ToOri(rewardToken, amt18RewardT);
         require(IERC20(rewardToken).balanceOf(address(this)) >= rewarded, "insufficient reward");
         TransferHelper.safeTransfer(rewardToken, msg.sender, rewarded);
